@@ -15,17 +15,24 @@ import java.util.Objects;
 public class Player implements Serializable{
     
     // class instance variables
-    private String playerID;
+    /**
+     * The playerID is a GUID value (e.g. 2a260c93-3722-40d5-867a-6ebc0bcf4dfc) 
+     * that is assigned when a new Player object is created.
+     * @see https://en.wikipedia.org/wiki/Globally_Unique_Identifier
+     * @see https://www.guidgenerator.com/online-guid-generator.aspx
+     * */
+    private String playerID; 
     private String name;
     private double bestTime;
     private double score;
 
     public Player() {
     }
-    
-    
-    
-    
+
+    public Player(String name) {
+        this.name = name;
+    }
+        
 
     public String getPlayerID() {
         return playerID;
