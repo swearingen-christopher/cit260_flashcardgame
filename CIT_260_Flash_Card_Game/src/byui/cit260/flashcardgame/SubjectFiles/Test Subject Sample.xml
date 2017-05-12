@@ -1,25 +1,29 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <Subject>
-    <SubjectTitle>Random Stuff</SubjectTitle>
-    <Question>
-        <QuestionID>1</QuestionID>
-        <QuestionText>What is the answer to life, the universe, and everything?</QuestionText>
-        <Answers>
-            <Answer>
-                <AnswerID>1</AnswerID>
-                <AnswerText>Uhhh... sushi?</AnswerText>
-                <IsCorrect>false</IsCorrect>
-            </Answer>
-            <Answer>
-                <AnswerID>2</AnswerID>
-                <AnswerText>42</AnswerText>
-                <IsCorrect>true</IsCorrect>
-            </Answer>
-            <Answer>
-                <AnswerID>3</AnswerID>
-                <AnswerText>Plaid</AnswerText>
-                <IsCorrect>false</IsCorrect>
-            </Answer>
-        </Answers>
-    </Question>
+    <subjectID>1</subjectID>
+    <SubjectName>Random Stuff</SubjectName>
+    <subjectDescription>This is just random stuff to demo/test the application's functionality.</subjectDescription>
+    <questions>
+        <question>
+            <questionID>1</questionID>
+            <questionText>What is the answer to life, the universe, and everything?</questionText>
+            <answerList>
+                <answer>
+                    <answerID>1</answerID>
+                    <answerText>Uhhh... sushi?</answerText>
+                    <IsCorrect>false</IsCorrect>
+                </answer>
+                <answer>
+                    <answerID>2</answerID>
+                    <answerText>42</answerText>
+                    <IsCorrect>true</IsCorrect>
+                </answer>
+                <answer>
+                    <answerID>3</answerID>
+                    <answerText>Plaid</answerText>
+                    <IsCorrect>false</IsCorrect>
+                </answer>
+            </answerList>
+        </question>
+    </questions>
 </Subject>
