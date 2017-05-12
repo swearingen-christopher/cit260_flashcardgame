@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package byui.cit260.flashcardgame.model;
-
+ 
 import java.io.Serializable;
 import java.util.Objects;
 

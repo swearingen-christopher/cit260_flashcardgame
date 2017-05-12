@@ -17,7 +17,7 @@ public class Question implements Serializable{
     
     private String questionID; //GUID-based ID
     private String questionText; //This is the text of the question itself
-    private Answer[] questionAnswers;
+    private Answer questionAnswer; //TODO:Eventually this should be an Array of possible answers
 
     public Question() {
     }
@@ -38,20 +38,21 @@ public class Question implements Serializable{
         this.questionText = questionText;
     }
 
-    public Answer[] getQuestionAnswers() {
-        return questionAnswers;
+ 
+    public Answer getQuestionAnswer() {
+        return questionAnswer;
     }
 
-    public void setQuestionAnswers(Answer[] questionAnswers) {
-        this.questionAnswers = questionAnswers;
+    public void setQuestionAnswer(Answer questionAnswer) {
+        this.questionAnswer = questionAnswer;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 41 * hash + Objects.hashCode(this.questionID);
-        hash = 41 * hash + Objects.hashCode(this.questionText);
-        hash = 41 * hash + Arrays.deepHashCode(this.questionAnswers);
+        hash = 67 * hash + Objects.hashCode(this.questionID);
+        hash = 67 * hash + Objects.hashCode(this.questionText);
+        hash = 67 * hash + Objects.hashCode(this.questionAnswer);
         return hash;
     }
 
@@ -73,15 +74,17 @@ public class Question implements Serializable{
         if (!Objects.equals(this.questionText, other.questionText)) {
             return false;
         }
-        if (!Arrays.deepEquals(this.questionAnswers, other.questionAnswers)) {
+        if (!Objects.equals(this.questionAnswer, other.questionAnswer)) {
             return false;
         }
         return true;
     }
 
+
+
     @Override
     public String toString() {
-        return "Question{" + "questionID=" + questionID + ", questionText=" + questionText + ", questionAnswers=" + questionAnswers + '}';
+        return "Question{" + "questionID=" + questionID + ", questionText=" + questionText + ", questionAnswer=" + questionAnswer + '}';
     }
     
     

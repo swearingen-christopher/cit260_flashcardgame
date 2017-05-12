@@ -5,7 +5,9 @@
  */
 package cit_260_flash_card_game;
 
+import byui.cit260.flashcardgame.model.Answer;
 import byui.cit260.flashcardgame.model.Player;
+import byui.cit260.flashcardgame.model.Question;
 
 /**
  *
@@ -27,6 +29,19 @@ public class CIT_260_Flash_Card_Game {
         
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
+        
+        Question question1 = new Question();
+        
+        question1.setQuestionID("Question1");
+        question1.setQuestionText("What is the answer to life, the universe, and everything?");
+        
+        Answer answer1 = new Answer();
+        answer1.setAnswerText("42");
+        answer1.setAnswerCorrect(true);
+        
+        question1.setQuestionAnswer(answer1);
+        
+        System.out.println(question1);
         
         
     }
