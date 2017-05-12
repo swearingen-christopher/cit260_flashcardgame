@@ -6,7 +6,8 @@
 package byui.cit260.flashcardgame.model;
 
 import java.io.Serializable;
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -18,6 +19,15 @@ public class Question implements Serializable{
     private String questionID; //GUID-based ID
     private String questionText; //This is the text of the question itself
     private Answer questionAnswer; //TODO:Eventually this should be an Array of possible answers
+    private List<Answer> answersList = new ArrayList<Answer>();
+
+    public List<Answer> getAnswersList() {
+        return answersList;
+    }
+
+    public void setAnswersList(List<Answer> answersList) {
+        this.answersList = answersList;
+    }
 
     public Question() {
     }
@@ -80,12 +90,14 @@ public class Question implements Serializable{
         return true;
     }
 
-
-
     @Override
     public String toString() {
-        return "Question{" + "questionID=" + questionID + ", questionText=" + questionText + ", questionAnswer=" + questionAnswer + '}';
+        return "Question{" + "questionID=" + questionID 
+                 + ", questionText=" + questionText 
+                + ", questionAnswer=" + questionAnswer 
+                + ", answersList=" + answersList + '}';
     }
-    
-    
+
+
+
 }
