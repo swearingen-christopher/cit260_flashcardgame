@@ -8,6 +8,8 @@ package cit_260_flash_card_game;
 import byui.cit260.flashcardgame.model.Answer;
 import byui.cit260.flashcardgame.model.Player;
 import byui.cit260.flashcardgame.model.Question;
+import byui.cit260.flashcardgame.model.Subject;
+import byui.cit260.flashcardgame.model.PlayerQuestionHistory;
 
 /**
  *
@@ -43,7 +45,22 @@ public class CIT_260_Flash_Card_Game {
         
         System.out.println(question1);
         
-        
+        Subject subject1 = new Subject();
+        subject1.setSubjectID("0001");
+        subject1.setSubjectDescription("An Introduction to Object Oriented Programming");
+        subject1.setSubjectName("JAVA I");
+        subject1.setQuestion(question1);
+
+        String subjectInfo = subject1.toString();
+        System.out.println(subjectInfo);
+
+        PlayerQuestionHistory playerQuestionHistory1 = new PlayerQuestionHistory();
+        playerQuestionHistory1.setPlayer(playerOne);
+        playerQuestionHistory1.setQuestion(question1);
+        playerQuestionHistory1.setSubject(subject1);
+
+        String playerQuestionHistoryInfo = playerQuestionHistory1.toString();
+        System.out.println(playerQuestionHistoryInfo);
     }
-    
+
 }
