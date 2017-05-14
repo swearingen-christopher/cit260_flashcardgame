@@ -1,0 +1,57 @@
+{
+  "Subject": {
+    "subjectID": "1",
+    "SubjectName": "Random Stuff",
+    "subjectDescription": "This is just random stuff to demo/test the application's functionality.",
+    "questionsList": {
+      "question": [
+        {
+          "questionID": "1",
+          "questionText": "What is the answer to life, the universe, and everything?",
+          "answerList": {
+            "answer": [
+              {
+                "answerID": "1",
+                "answerText": "Uhhh... sushi?",
+                "IsCorrect": "false"
+              },
+              {
+                "answerID": "2",
+                "answerText": "42",
+                "IsCorrect": "true"
+              },
+              {
+                "answerID": "3",
+                "answerText": "Plaid",
+                "IsCorrect": "false"
+              }
+            ]
+          }
+        },
+        {
+          "questionID": "2",
+          "questionText": "What is 1+1?",
+          "answerList": {
+            "answer": [
+              {
+                "answerID": "1",
+                "answerText": "2",
+                "IsCorrect": "true"
+              },
+              {
+                "answerID": "2",
+                "answerText": "42",
+                "IsCorrect": "false"
+              },
+              {
+                "answerID": "3",
+                "answerText": "And then the accountant says \"What do you want it to be?\"",
+                "IsCorrect": "false"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

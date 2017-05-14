@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<Subject>
+    <subjectID>1</subjectID>
+    <SubjectName>Random Stuff</SubjectName>
+    <subjectDescription>This is just random stuff to demo/test the application's functionality.</subjectDescription>
+    <questionsList>
+        <question>
+            <questionID>1</questionID>
+            <questionText>What is the answer to life, the universe, and everything?</questionText>
+            <answerList>
+                <answer>
+                    <answerID>1</answerID>
+                    <answerText>Uhhh... sushi?</answerText>
+                    <IsCorrect>false</IsCorrect>
+                </answer>
+                <answer>
+                    <answerID>2</answerID>
+                    <answerText>42</answerText>
+                    <IsCorrect>true</IsCorrect>
+                </answer>
+                <answer>
+                    <answerID>3</answerID>
+                    <answerText>Plaid</answerText>
+                    <IsCorrect>false</IsCorrect>
+                </answer>
+            </answerList>
+        </question>
+        <question>        
+            <questionID>2</questionID>
+            <questionText>What is 1+1?</questionText>
+            <answerList>
+                <answer>
+                    <answerID>1</answerID>
+                    <answerText>2</answerText>
+                    <IsCorrect>true</IsCorrect>
+                </answer>
+                <answer>
+                    <answerID>2</answerID>
+                    <answerText>42</answerText>
+                    <IsCorrect>false</IsCorrect>
+                </answer>
+                <answer>
+                    <answerID>3</answerID>
+                    <answerText>And then the accountant says "What do you want it to be?"</answerText>
+                    <IsCorrect>false</IsCorrect>
+                </answer>
+            </answerList>
+        </question>
+    </questionsList>
+</Subject>

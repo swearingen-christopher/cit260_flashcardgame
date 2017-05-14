@@ -8,6 +8,8 @@ package cit_260_flash_card_game;
 import byui.cit260.flashcardgame.model.Answer;
 import byui.cit260.flashcardgame.model.Player;
 import byui.cit260.flashcardgame.model.Question;
+import java.util.ArrayList;
+import java.util.List;
 import byui.cit260.flashcardgame.model.Subject;
 import byui.cit260.flashcardgame.model.PlayerQuestionHistory;
 
@@ -32,17 +34,34 @@ public class CIT_260_Flash_Card_Game {
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
         
+        //create an example question object
         Question question1 = new Question();
-        
+        //load the example question object
         question1.setQuestionID("Question1");
         question1.setQuestionText("What is the answer to life, the universe, and everything?");
         
+        //create some Answer objects
         Answer answer1 = new Answer();
+        Answer answer2 = new Answer();
+        //load the Answer objects with data
         answer1.setAnswerText("42");
         answer1.setAnswerCorrect(true);
+        answer2.setAnswerText("Uhhh... sushi?");
+        answer2.setAnswerCorrect(false);
         
+        //Create a list for holding multiple Answers
+        List<Answer> questionAnswers = new ArrayList<Answer>();
+        //Add the example Answer objects to the list
+        questionAnswers.add(answer1);
+        questionAnswers.add(answer2);
+
+        //Add the list of example Answers to the Question object's AnswersList attribute
+        question1.setAnswersList(questionAnswers);
+
+        //Add a single answer for demo-ing
         question1.setQuestionAnswer(answer1);
         
+        //Echo out the Question object's data
         System.out.println(question1);
         
         Subject subject1 = new Subject();
@@ -62,5 +81,5 @@ public class CIT_260_Flash_Card_Game {
         String playerQuestionHistoryInfo = playerQuestionHistory1.toString();
         System.out.println(playerQuestionHistoryInfo);
     }
-
+    
 }
