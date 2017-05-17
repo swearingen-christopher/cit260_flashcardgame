@@ -1,6 +1,8 @@
 package byui.cit260.flashcardgame.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by EgbertRG on 5/13/2017.
@@ -8,7 +10,17 @@ import java.io.Serializable;
 public class PlayerQuestionHistory implements Serializable {
     private Subject subject;
     private Player player;
-    private Question question;
+    private Question question;//Allows only ONE question
+    private List<Question> questionsList = new ArrayList<>(); //Allows 0:M questions (each with 0:M answers)
+
+    public List<Question> getQuestionsList() {
+        return questionsList;
+    }
+
+    public void setQuestionsList(List<Question> questionsList) {
+        this.questionsList = questionsList;
+    }
+    
 
     public PlayerQuestionHistory() {
     }
@@ -63,6 +75,7 @@ public class PlayerQuestionHistory implements Serializable {
                 "subject=" + subject +
                 ", player=" + player +
                 ", question=" + question +
+                ", questionList=" + questionsList +
                 '}';
     }
 }

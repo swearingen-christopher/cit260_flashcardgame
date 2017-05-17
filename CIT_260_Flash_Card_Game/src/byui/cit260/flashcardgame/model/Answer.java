@@ -59,10 +59,7 @@ public class Answer implements Serializable{
         if (this.answerCorrect != other.answerCorrect) {
             return false;
         }
-        if (!Objects.equals(this.answerText, other.answerText)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.answerText, other.answerText);
     }
 
     @Override

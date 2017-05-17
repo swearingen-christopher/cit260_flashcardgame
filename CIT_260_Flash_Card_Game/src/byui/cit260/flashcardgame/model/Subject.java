@@ -1,6 +1,8 @@
 package byui.cit260.flashcardgame.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by EgbertRG on 5/11/2017.
@@ -10,8 +12,17 @@ public class Subject implements Serializable {
     private String subjectID;
     private String subjectName;
     private String subjectDescription;
-    private Question question;
+    private Question question;//Allows only ONE question
 
+    public List<Question> getQuestionsList() {
+        return questionsList;
+    }
+
+    public void setQuestionsList(List<Question> questionsList) {
+        this.questionsList = questionsList;
+    }
+    private List<Question> questionsList = new ArrayList<>(); //Allows 0:M questions (each with 0:M answers)
+    
     public Subject() {
     }
 
@@ -77,6 +88,7 @@ public class Subject implements Serializable {
                 ", subjectName='" + subjectName + '\'' +
                 ", subjectDescription='" + subjectDescription + '\'' +
                 ", question=" + question +
+                ", questionsList=" + questionsList +
                 '}';
     }
 }
