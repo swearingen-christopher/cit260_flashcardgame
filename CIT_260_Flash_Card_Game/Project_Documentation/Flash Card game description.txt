@@ -1,0 +1,131 @@
+
+
+A flash card game that can be used as a memorization tool, individual player, or as a multi-player game with scoring.  The initial subject matter could be content from this course, such as the following question examples.  The answers could be worded like a jeopardy response, 'What is...?'
+
+What are key components of Object Oriented Programming (Encapsulation, Inheritance, Polymorphism)
+What is Encapsulation
+What is Inheritance
+what is Polymorphism
+what is the name of the java package that provides a library to get user input from the console
+what is the name of the standard java class to calculate square root
+what has higher precedence & or ||
+etc
+One question at a time would be visible, with the correct answer hidden until a players choice has been made.  We might even include a timer for each question.....  Eventually we could make the program generic, such that the basic flash card functionality could be used with any content.  We could provide an interface to read a file that contained the question:answer pairs.
+
+
+Suggestions:
+	I like the idea!  One way of extending it would be to have an editor for creating new flashcards.  Storing the content would be a good exercise in XML/JSON/DB connectivity.
+	Another option would be to have it keep track of the cards the user got wrong.  Then show those cards more often on subsequent runs.  It would then operate a bit like the Leitner study system.
+	
+	Showing the ones you missed again would be cool. You could also do an alternate scoring system. If it could save data between sessions you could grant more points for cards where you get the answer incorrect more often. This means the harder questions for you would be more rewarding. Maybe  you could even make it user based.
+	
+
+Classes
+
+	Model Layer
+		- Card
+		- Question
+			- Answer
+		- Subject
+		- Player
+		- PlayerQuestionHistory
+			- need to add difficultyLevel variable
+
+	Control Layer
+		- Game
+			- determine question set based on user selected
+				- subject
+				- difficulty level (fill in blank, multiple choice, per question time contraints)
+			- keep game in motion (while loop)
+		- Calculate difficulty
+			- possible points based on 
+				- subject difficulty level (JAVA I, JAVA II, etc)
+				- increase or decrease in time per question
+				- multiple choice question vs fill in blank
+		- CalculateScore
+			- add points earned
+			- subtract points from question's possible points.
+				- if question is initially missed, but correctly answered on subsequent attempt less points will be earned.
+		- Create new subject area
+		- GameTimer
+		- QuestionTimer
+		- StoreMissedQuestions
+			- intent is to be able to reask question or similar questions
+		- PlayerTurns
+			- rotate game to new player's questions, etc.
+		- BuildCard
+			- randomly select questions from unanswered subject set
+			- if multiple choice build possible answer set based on selected question.
+		- Quit
+			- store score in player history
+			- clean up game
+			- Call DisplayEnding banner
+		- SaveGame
+
+	View Layer
+		- DisplayCard
+		- DisplayBanner
+			- Welcome
+				- Name and Description of game
+			- End
+				- Final times, scores, and difficulty level
+			- GamePlay
+				- current player and level
+				- current score
+				- current time
+					- per question if relevant
+					- total time
+					- total time remaining
+		
+			
+	
+	
+	
+	
+Functions
+	
+	- display welcome banner
+		- name of game
+		- brief game description
+	- prompt user for name
+	- main menu
+		- create new game file (user enters name of subject matter, sub-topic, and question:answer pairs)
+		- open existing in play game
+		- start new game
+			- prompt for number of players
+			- prompt for player names
+				- if multiple players 
+					- prompt to ask questions to players in round robin fashion or randomize players turns
+		- quit
+	- game play menu
+		- select subject area
+			- select sub-topic(s) [all or one or two]
+		- save game
+		- quit game
+			- prompt to save game
+	- help menu
+		- how to create a new game file
+		- how to select an in play game
+	- Map menu
+		- Map 1  (easy)
+		- Map 2  (intermediate)
+		- Map 3  (difficult)
+	- display a 2D or 3D game map
+	- move player from one map position to another based on difficulty of question and correctness (if correct answer move forward to selected destination, if incorrect answer stay put or move back to previous position?)
+	- shuffle
+		- shuffle all sub-topic questions
+		- shuffle questions only within the sub-topics
+	- answer question
+	- display question
+	- validate answer:question
+	- read input file (different file for different subject areas, we'll only do one subject area JAVA I)
+		- json formatted ( an array for each sub topic [question:answer, question:answer])
+	- calculate topic score
+	- calculate game score
+	- select 'random' question
+		- if a question from a given topic, array, is missed, ask more questions from this area to validate knowledge
+	- display game results
+	- display topic results
+	- create subject area question and answers
+	- save game
+	

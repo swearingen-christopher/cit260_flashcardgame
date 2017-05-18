@@ -1,0 +1,70 @@
+Classes
+
+	Model Layer
+		- Card
+		- Question
+			- Answer
+		- Subject
+		- Player
+		- PlayerQuestionHistory
+			- need to add difficultyLevel variable
+
+	Control Layer
+		- Game
+			- determine question set based on selected
+				- subject
+				- difficulty level (fill in blank, multiple choice, per question time contraints)
+			- keep game in motion (while loop)
+			- PlayerTurn()
+				- rotate game to new player's questions, etc.
+		- Difficulty
+			- calculateDifficulty()
+				- possible points based on (question.setQuestionMaxPoints)
+					- subject difficulty level (JAVA I, JAVA II, etc)
+					- increase or decrease in time per question
+					- multiple choice question vs fill in blank
+		- Score
+			- CalculateScore()
+				- add points earned
+			- AdjustPotentialPoints() subtract points from question's possible points.
+					- if question is initially missed, but correctly answered on subsequent attempt less points will be earned.
+					- call question.setAdjustedPoints()
+		- Timer
+			- GameTimer()
+			- QuestionTimer()
+		- MissedQuestion
+			- reducePotentialPoints()
+				- call question.setAdjustedPoints()
+			- storeMissedQuestions()
+				- intent is to be able to reask question or similar questions
+
+		- BuildCard
+			- selectQuestions()
+				- randomly select questions from unanswered subject set
+			- selectMultipleChoiceAnswers()
+				- if multiple choice build possible answer set based on selected question.
+		- Quit
+			- recordScore()
+				- store score in player history
+			- cleanUp()
+			- Call display.endingBanner()
+			- saveGame()
+
+	View Layer
+		- Create new subject area
+			- createNewSubject()
+			- deleteSubject()
+			- defineQ&A()
+		- DisplayCard
+		- DisplayBanner
+			- Welcome
+				- Name and Description of game
+			- End
+				- Final times, scores, and difficulty level
+			- GamePlay
+				- current player and level
+				- current score
+				- current time
+					- per question if relevant
+					- total time
+					- total time remaining
