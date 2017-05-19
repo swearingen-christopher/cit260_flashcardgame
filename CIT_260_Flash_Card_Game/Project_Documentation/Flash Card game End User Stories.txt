@@ -11,7 +11,12 @@ End User Stories
 	- Quit
 	
 Start program
-	The end user enters the command to start the program. The computer displays a banner screen with a short description of the game. The player is prompted for and enters their name. The user enters their name and the computer displays a personalized welcome message and the Main Menu. An error message is displayed if an invalid name is entered and the player is prompted to reenter a valid name or quit.
+	The end user enters the command to start the program. The computer displays
+	a banner screen with a short description of the game. The player is prompted
+	for and enters their name. The user enters their name and the computer
+	displays a personalized welcome message and the Main Menu. An error message
+	is displayed if an invalid name is entered and the player is prompted to
+	reenter a valid name or quit.
 
 Main Menu
 	Display the following menu.
@@ -20,50 +25,127 @@ Main Menu
 		C - Create new subject
 		H - Help
 		Q - Quit
-	The player enters the selected item. The computer displays the selected end user story. The computer displays an error message and redisplays the main menu, if an invalid menu item is entered. The program terminates when 'Quit' is selected.
+	The player enters the selected item. The computer displays the selected end
+	user story. The computer displays an error message and redisplays the main
+	menu, if an invalid menu item is entered. The program terminates when
+	'Quit' is selected.
  
 	Start new game
-		The player enters 'N' to start a new game. The player is prompted to enter the number of people who will be playing. The player enters the number of people and the computer checks to see if an invalid amount has been entered. If an invalid value is entered, display an error message and prompt the player to reenter a valid number.  The player is prompted to select a 'Subject' area to be quized on.  The player is prompted to select the number of questions, the type of questions (fill in the blank, multiple choice, or both), and select the amount of time to allocate for each question to be included in the card deck. The combination of choices determines the possible amount of points that can be earned.  Each question has a default points value (5 pts), time alloted value (2 minutes), and question type (multiple choice).  The questions maximum point value can be increased by 1 point for each 10 second decrement, if the default time alloted is reduced.  The questions maximum point value can be increased by 5 points, if the question type is changed to fill in the blank.  If the player chooses to have both question types included in the card deck, a random amount of questions will be changed to be fill in the blank type questions and their maximum points adjusted accordingly.  The program then creates and initializes all of the objects needed for the game. The Game Menu is then displayed.
+		The player enters 'N' to start a new game. The player is prompted to
+		enter the number of people who will be playing. The player enters the
+		number of people and the computer checks to see if an invalid amount
+		has been entered. If an invalid value is entered, display an error
+		message and prompt the player to reenter a valid number.  The player is
+		prompted to select a 'Subject' area to be quizzed on.  The player is
+		prompted to select the number of questions, the type of questions
+		(fill in the blank, multiple choice, or both), and select the amount of
+		time to allocate for each question to be included in the card deck.
+		The combination of choices determines the possible amount of points that
+		can be earned.  Each question has a default points value (5 pts), time
+		allotted value (2 minutes), and question type (multiple choice).  The
+		questions maximum point value can be increased by 1 point for each 10
+		second decrement, if the default time allotted is reduced.  The questions
+		maximum point value can be increased by 5 points, if the question type
+		is changed to fill in the blank.  If the player chooses to have both
+		question types included in the card deck, a random amount of questions
+		will be changed to be fill in the blank type questions and their maximum
+		points adjusted accordingly.  The program then creates and initializes
+		all of the objects needed for the game. The Game Menu is then displayed.
 
 		Game menu
-			The program displays a deck of shuffled cards in the center of the screen.  The first card displays an image on the top side, which will be replaced with the question once 'Begin Play' (P) is selected.  Subsequent cards will display the question on the top and when answered correctly will flip over to display correct answer(s).  A space is provided below the deck of cards to gather correct answers from the player, an input field if question type is 'fill in the blank' or a list of multiple choice answers.  The list of multiple choice answers will use radial buttons to indicate a single correct responses or a selection box to indicate one or more correct responses possible.
-			A banner is displayed across the top left half of the screen containing the current players name, selected subject area, number of cards (questions) in the deck, the amount of time alloted per question, and the maximum points that can be earned.  A banner is displayed in the to right half of the screen that displays the current players number of questions answered correctly, current score, and question timer, if timer chosen.  A list of current players, initially ordered alphabetically by player name with each players current score, is displayed on the right side of the screen.  The list order will be sorted by highest score, each player's score has changed.  A player's score can be negative. 
+			The program displays a deck of shuffled cards in the center of the
+			screen.  The first card displays an image on the top side, which
+			will be replaced with the question once 'Begin Play' (P) is
+			selected.  Subsequent cards will display the question on the top
+			and when answered correctly will flip over to display correct
+			answer(s).  A space is provided below the deck of cards to gather
+			correct answers from the player, an input field if question type is
+			'fill in the blank' or a list of multiple choice answers.  The list
+			of multiple choice answers will use radial buttons to indicate a
+			single correct responses or a selection box to indicate one or more
+			correct responses possible.
+			A banner is displayed across the top left half of the screen
+			containing the current players name, selected subject area, number
+			of cards (questions) in the deck, the amount of time allotted per
+			question, and the maximum points that can be earned.  A banner is
+			displayed in the to right half of the screen that displays the
+			current players number of questions answered correctly, current
+			score, and question timer, if timer chosen.  A list of current
+			players, initially ordered alphabetically by player name with each
+			players current score, is displayed on the right side of the screen.
+			The list order will be sorted by highest score, each player's score
+			has changed.  A player's score can be negative.
 			The following game menu is displayed on the left side of the screen. 
 				P - Begin Play
 				K - Skip card
 				S - Save game
 				Q - Quit
-			The user enters a choice and the program switches to the selected view. When 'Quit' is selected, display the Main Menu.
+			The user enters a choice and the program switches to the selected
+			view. When 'Quit' is selected, display the Main Menu.
 
 		Begin Play
-			Replace image on top card with first question, display appropriate response field (fill in blank or list of responses) below card deck, including a submit button and a hint button, and start the question timer.  When a correct reponse is provided flip the card over to expose the correct response and increment the player's score by the question's 'max points' value.
-			A submitted incorrect response will flip the card over, but not expose the correct answer, and will decrement the score by the questions 'max points' value.
-			A 'Show Answer' button will be displayed, if incorrect response is provided and if the 'time per question' allotment has not been decreased.  The 'hint' button will be displayed in place of the 'hint' button which is displayed while the player is attempting to respond.
+			Replace image on top card with first question, display appropriate
+			response field (fill in blank or list of responses) below card deck,
+			including a submit button and a hint button, and start the question
+			timer.  When a correct response is provided flip the card over to
+			expose the correct response and increment the player's score by the
+			question's 'max points' value.
+			A submitted incorrect response will flip the card over, but not
+			expose the correct answer, and will decrement the score by the
+			questions 'max points' value.
+			A 'Show Answer' button will be displayed, if incorrect response is
+			provided and if the 'time per question' allotment has not been
+			decreased.  The 'hint' button will be displayed in place of the
+			'hint' button which is displayed while the player is attempting to
+			respond.
 
 		Skip card
-			A player my choose to skip two cards per game, unless the player has chosen to reduce the alloted time per question.  Skipping a card flips the card to display the next question, without displaying the skipped question's answer.  Skipping a card removes the question from the players deck of cards reducing the number of cards and the games potential maximum points displayed in the top left banner.
+			A player my choose to skip two cards per game, unless the player
+			has chosen to reduce the allotted time per question.  Skipping a
+			card flips the card to display the next question, without displaying
+			the skipped question's answer.  Skipping a card removes the question
+			from the players deck of cards reducing the number of cards and the
+			games potential maximum points displayed in the top left banner.
 
 
 		Save game
-			Pauses the game/question timer, and provides player(s) option to save game or cancel.  The 'save' button saves the game with the timestamp and player's name(2017-05-23-Rob-Egbert). Cancel returns player to the game and continues the game/question timer.
+			Pauses the game/question timer, and provides player(s) option to
+			save game or cancel.  The 'save' button saves the game with the
+			timestamp and player's name. Cancel returns player to the game
+			and continues the game/question timer.
 
 	Restart existing game
-		Player is displayed a list of their previously saved games.  The player will select the radial button next to the game they would like to continue playing.  The player will select submit to continue the game or cancel to return to the Main menu.  Selecting continue will retrieve the previously saved game, including time remaining, points earned and all other metadata that is diplayed in the various banners.
+		Player is displayed a list of their previously saved games.  The player
+		will select the radial button next to the game they would like to
+		continue playing.  The player will select submit to continue the game
+		or cancel to return to the Main menu.  Selecting continue will retrieve
+		the previously saved game, including time remaining, points earned and
+		all other metadata that is diplayed in the various banners.
 
 	Create new subject
-		Provides the player the ability to define a new subject, questions and answers.  A new subject requires the following fields to be populated.
+		Provides the player the ability to define a new subject, questions and
+		answers.  A new subject requires the following fields to be populated.
 			- Subject Label: JAVA I
-			- Subject Description: Beginner level questions regarding inheritance, polymorphism, basic JAVA functions, classes, terminology, UML, etc.
+			- Subject Description: Beginner level questions regarding
+			inheritance, polymorphism, basic JAVA functions, classes,
+			terminology, UML, etc.
 			- Default question timer
 			- Question
 				- Question
 					- correct answer
-					- multiple choice answers (default answer type, can only be changed when starting a new game.)
+					- multiple choice answers (default answer type, can only be
+					changed when starting a new game.)
 					- Is answer case sensitive
-					- difficulty level (points can be increased at game time if the player chooses to increase the difficulty level by reducing the default allotted time per question or answer type.  Details found in the 'Start new game' menu)
+					- difficulty level (points can be increased at game time if
+					the player chooses to increase the difficulty level by
+					reducing the default allotted time per question or answer
+					type.  Details found in the 'Start new game' menu)
 						- easy = 4 points
 						- medium = 5 points
 						- difficult = 6 points
 	Quit
-		Player is presented with the option to 'Save and Quit' or 'Quit'.  'Save and Quit' allows the player to save the game prior to quitting.  'Quit' ends the game, cleans up any remaining active stuff and exits the program.
+		Player is presented with the option to 'Save and Quit' or 'Quit'.
+		'Save and Quit' allows the player to save the game prior to quitting.
+		'Quit' ends the game, cleans up any remaining active stuff and exits the
+		program.
 	
