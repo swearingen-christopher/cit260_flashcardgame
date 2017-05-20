@@ -1,0 +1,36 @@
+calculateScore(PlayerQuestionHistory playerQuestionHistory),,,,,,,,,,,,,,
+calculateScore Test Matrix,,,,,,,,,,,,,,
+,Valid,Invalid,,,Boundary,,,,,,,,,
+,1,2,3,4,5,,,,,,,,,
+Inputs,,,,,,,,,,,,,,
+playerQuestionHistory.getScore(),,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+Outputs,,,,,,,,,,,,,,
+score,,,,,,,,,,,,,,
+error,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+"calculateQuestionPoints(defaultPoints, questionType, questionTime): int",,,,,,,,,,,,,,
+calculateQuestionPoints Test Matrix,,,,,,,,,,,,,,
+,Default,Valid,,,,,,,,,Invalid,,,Boundary
+,,1,2,3,4,5,6,7,8,9,10,11,12,13
+Inputs,,,,,,,,,,,,,,
+Scenario 1,,,,,,,,,,,,,,
+points,5,5,5,5,5,5,5,5,5,5,<5,,,5
+questionType,0,0,0,0,0,0,0,0,0,0,,!0 or !5,,> 0; < 5
+questionTime,0,1,2,3,4,5,6,7,8,9,,,< 0 or > 9,> 0; < 9
+,,,,,,,,,,,,,,
+Outputs,,,,,,,,,,,,,,
+points,5,6,7,8,9,10,11,12,13,14,,,,
+,,,,,,,,,,,,,,
+Scenario 2,,,,,,,,,,,,,,
+points,5,5,5,5,5,5,5,5,5,5,,,,5
+questionType,0,5,5,5,5,5,5,5,5,5,,,,> 0; < 5
+questionTime,0,1,2,3,4,5,6,7,8,9,,,,> 0; < 9
+,,,,,,,,,,,,,,
+Outputs,,,,,,,,,,,,,,
+points,5,11,12,13,14,15,16,17,18,19,,,,
+error,success,success,success,success,success,success,success,success,success,success,Invalid question Type or time parameter,,,
