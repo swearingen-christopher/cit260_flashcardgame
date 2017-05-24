@@ -42,9 +42,9 @@ Main Menu
 		to allocate for each question to be included in the card deck. The
 		combination of choices determines the possible amount of points that can
 		be earned.  Each question has a default points value (5 pts), time
-		alloted value (2 minutes), and question type (multiple choice).  The
+		allotted value (2 minutes), and question type (multiple choice).  The
 		questions maximum point value can be increased by 1 point for each 10
-		second decrement, if the default time alloted is reduced.  The questions
+		second decrement, if the default time allotted is reduced.  The questions
 		maximum point value can be increased by 5 points, if the question type
 		is changed to fill in the blank.  If the player chooses to have both
 		question types included in the card deck, a random amount of questions
@@ -66,7 +66,7 @@ Main Menu
 			responses possible.
 			A banner is displayed across the top left half of the screen
 			containing the current players name, selected subject area, number
-			of cards (questions) in the deck, the amount of time alloted per
+			of cards (questions) in the deck, the amount of time allotted per
 			question, and the maximum points that can be earned.  A banner is
 			displayed in the to right half of the screen that displays the
 			current players number of questions answered correctly, current
@@ -101,7 +101,7 @@ Main Menu
 
 		Skip card
 			A player my choose to skip two cards per game, unless the player has
-			chosen to reduce the alloted time per question.  Skipping a card
+			chosen to reduce the allotted time per question.  Skipping a card
 			flips the card to display the next question, without displaying the
 			skipped question's answer.  Skipping a card removes the question
 			from the players deck of cards reducing the number of cards and the
@@ -120,7 +120,7 @@ Main Menu
 		continue playing.  The player will select submit to continue the game
 		or cancel to return to the Main menu.  Selecting continue will retrieve
 		the previously saved game, including time remaining, points earned and
-		all other metadata that is diplayed in the various banners.
+		all other metadata that is displayed in the various banners.
 
 	Create new subject
 		Provides the player the ability to define a new subject, questions and
