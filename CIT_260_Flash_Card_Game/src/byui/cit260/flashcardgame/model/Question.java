@@ -9,6 +9,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import org.json.simple.JSONObject;
 
 /**
  *
@@ -19,7 +20,7 @@ public class Question implements Serializable{
     private String questionID; //GUID-based ID
     private String questionText; //This is the text of the question itself
     private Answer questionAnswer; //TODO:Eventually this should be an Array of possible answers
-    private List<Answer> answersList = new ArrayList<Answer>();
+    private List<Answer> answersList = new ArrayList<>();
 
     public List<Answer> getAnswersList() {
         return answersList;
@@ -84,20 +85,30 @@ public class Question implements Serializable{
         if (!Objects.equals(this.questionText, other.questionText)) {
             return false;
         }
-        if (!Objects.equals(this.questionAnswer, other.questionAnswer)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.questionAnswer, other.questionAnswer);
     }
 
     @Override
     public String toString() {
+        return this.toJSON();  //can we do this?
+        /*
         return "Question{" + "questionID=" + questionID 
                  + ", questionText=" + questionText 
                 + ", questionAnswer=" + questionAnswer 
                 + ", answersList=" + answersList + '}';
+        */
     }
 
+    public String toJSON() {
+        JSONObject obj = new JSONObject();
 
+        obj.put("questionID", this.questionID);
+        obj.put("questionText", this.questionText);
+        obj.put("answers", this.answersList);
+        obj.put("questionAnswer", this.questionAnswer);
+        
+        return obj.toJSONString();
+
+    }
 
 }

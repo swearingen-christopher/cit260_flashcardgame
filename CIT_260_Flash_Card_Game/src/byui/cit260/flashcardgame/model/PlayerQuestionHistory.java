@@ -3,6 +3,7 @@ package byui.cit260.flashcardgame.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import org.json.simple.JSONObject;
 
 /**
  * Created by EgbertRG on 5/13/2017.
@@ -78,4 +79,18 @@ public class PlayerQuestionHistory implements Serializable {
                 ", questionList=" + questionsList +
                 '}';
     }
+
+    public String toJSON() {
+        JSONObject obj = new JSONObject();
+
+        obj.put("player",this.player.toJSON());
+        obj.put("questions", this.questionsList);
+        obj.put("", this.subject);
+        
+        return obj.toJSONString();
+
+    }
+
+
+
 }

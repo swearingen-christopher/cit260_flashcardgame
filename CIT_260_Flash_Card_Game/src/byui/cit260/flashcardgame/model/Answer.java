@@ -4,19 +4,20 @@
  * and open the template in the editor.
  */
 package byui.cit260.flashcardgame.model;
- 
+
 import java.io.Serializable;
 import java.util.Objects;
+import org.json.simple.JSONObject;
 
 /**
  *
  * @author christopher.swearing
  */
-public class Answer implements Serializable{
+public class Answer implements Serializable {
 
     private String answerText;
     private boolean answerCorrect;
-    
+
     public Answer() {
     }
 
@@ -66,6 +67,15 @@ public class Answer implements Serializable{
     public String toString() {
         return "Answer{" + "answerText=" + answerText + ", answerCorrect=" + answerCorrect + '}';
     }
-    
-    
+
+    public String toJSON() {
+        JSONObject obj = new JSONObject();
+
+        obj.put("answerText", this.answerText);
+        obj.put("isCorrect", this.answerCorrect);
+
+        return obj.toJSONString();
+
+    }
+
 }

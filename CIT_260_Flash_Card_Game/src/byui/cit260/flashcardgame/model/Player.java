@@ -7,6 +7,7 @@ package byui.cit260.flashcardgame.model;
 
 import java.io.Serializable;
 import java.util.Objects;
+import org.json.simple.JSONObject;
 
 /**
  *
@@ -102,12 +103,18 @@ public class Player implements Serializable{
         if (!Objects.equals(this.playerID, other.playerID)) {
             return false;
         }
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.name, other.name);
     }
     
-         
+    public String toJSON(){
+        JSONObject obj = new JSONObject();
+        
+        obj.put("playerID", this.playerID);
+        obj.put("name", this.name);
+        obj.put("bestTime", this.bestTime);
+        obj.put("score", this.score);
+        
+        return obj.toJSONString();
+    }
     
 }

@@ -14,6 +14,6 @@ public class GameControl {
     public Game listIncompleteGames(Player playerID){return Game[];}
     public Game saveGame(Game gameID) {return Void;}
     public Game deleteGame(Game gameID){;}
-    public Game updateScore(PlayerQuestionHistory playerQuestionHistory) {return score;}
+    public Game updateScore(PlayerQuestionHistory playerQuestionHistory) {return score;z}
 
 }

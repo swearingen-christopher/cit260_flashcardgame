@@ -3,6 +3,7 @@ package byui.cit260.flashcardgame.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import org.json.simple.JSONObject;
 
 /**
  * Created by EgbertRG on 5/11/2017.
@@ -91,4 +92,17 @@ public class Subject implements Serializable {
                 ", questionsList=" + questionsList +
                 '}';
     }
+    
+    public String toJSON() {
+        JSONObject obj = new JSONObject();
+        
+        obj.put("subjectID", this.subjectID);
+        obj.put("subjectName", this.subjectName);
+        obj.put("subjectDescription", this.subjectDescription);
+        obj.put("questionsList", this.questionsList);
+        
+        return obj.toJSONString();
+
+    }
+    
 }
