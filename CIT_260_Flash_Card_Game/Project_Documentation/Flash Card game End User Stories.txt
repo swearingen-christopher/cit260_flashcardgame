@@ -68,7 +68,7 @@ Main Menu
 			containing the current players name, selected subject area, number
 			of cards (questions) in the deck, the amount of time allotted per
 			question, and the maximum points that can be earned.  A banner is
-			displayed in the to right half of the screen that displays the
+			displayed in the top right half of the screen that displays the
 			current players number of questions answered correctly, current
 			score, and question timer, if timer chosen.  A list of current
 			players, initially ordered alphabetically by player name with each
@@ -95,17 +95,17 @@ Main Menu
 			questions 'max points' value.
 			A 'Show Answer' button will be displayed, if incorrect response is
 			provided and if the 'time per question' allotment has not been
-			decreased.  The 'hint' button will be displayed in place of the
-			'hint' button which is displayed while the player is attempting
-			to respond.
+			decreased.  A 'hint' button will be displayed while the player is
+			attempting to respond.
 
 		Skip card
 			A player my choose to skip two cards per game, unless the player has
-			chosen to reduce the allotted time per question.  Skipping a card
-			flips the card to display the next question, without displaying the
-			skipped question's answer.  Skipping a card removes the question
-			from the players deck of cards reducing the number of cards and the
-			games potential maximum points displayed in the top left banner.
+			chosen to reduce the allotted time per question, in which case skipping
+			is not permitted.  Skipping a card flips the card to display the next
+			question, without displaying the skipped question's answer.  Skipping
+			a card removes the question from the players deck of cards reducing the
+			number of cards and the games potential maximum points displayed in the
+			top left banner.
 
 
 		Save game
@@ -142,6 +142,7 @@ Main Menu
 						- easy = 4 points
 						- medium = 5 points
 						- difficult = 6 points
+					- hint
 	Quit
 		Player is presented with the option to 'Save and Quit' or 'Quit'.  'Save
 		and Quit' allows the player to save the game prior to quitting.  'Quit'
