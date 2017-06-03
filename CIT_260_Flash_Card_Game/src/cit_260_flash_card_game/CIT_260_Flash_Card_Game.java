@@ -5,7 +5,10 @@
  */
 package cit_260_flash_card_game;
 
+import byui.cit260.flashcardgame.control.FileControl;
+import byui.cit260.flashcardgame.control.UUIDGenerator;
 import byui.cit260.flashcardgame.model.Answer;
+import byui.cit260.flashcardgame.model.Game;
 import byui.cit260.flashcardgame.model.Player;
 import byui.cit260.flashcardgame.model.Question;
 import java.util.ArrayList;
@@ -28,7 +31,7 @@ public class CIT_260_Flash_Card_Game {
         
         playerOne.setName("Austin Powers");
         playerOne.setBestTime(10.00);
-        playerOne.setPlayerID("Player 1");
+        playerOne.setPlayerID(UUIDGenerator.generateID());
         playerOne.setScore(100);
         
         String playerInfo = playerOne.toString();
@@ -50,7 +53,7 @@ public class CIT_260_Flash_Card_Game {
         answer2.setAnswerCorrect(false);
         
         //Create a list for holding multiple Answers
-        List<Answer> questionAnswers = new ArrayList<Answer>();
+        List<Answer> questionAnswers = new ArrayList<>();
         //Add the example Answer objects to the list
         questionAnswers.add(answer1);
         questionAnswers.add(answer2);
@@ -65,7 +68,7 @@ public class CIT_260_Flash_Card_Game {
         System.out.println(question1);
         
         Subject subject1 = new Subject();
-        subject1.setSubjectID("0001");
+        subject1.setSubjectID(UUIDGenerator.generateID());
         subject1.setSubjectDescription("An Introduction to Object Oriented Programming");
         subject1.setSubjectName("JAVA I");
         subject1.setQuestion(question1);
@@ -80,6 +83,24 @@ public class CIT_260_Flash_Card_Game {
 
         String playerQuestionHistoryInfo = playerQuestionHistory1.toString();
         System.out.println(playerQuestionHistoryInfo);
+        
+        
+        Game gameData = new Game();
+        
+        gameData.setPlayer(playerOne);
+        gameData.setSubject(subject1);
+        gameData.setGameID(UUIDGenerator.generateID());
+        
+        testFileWriter(playerOne, gameData);
+    }
+    
+    
+    
+    private static void testFileWriter(Player playerData, Game gameData){
+        FileControl fileWriter = new FileControl();
+        
+        fileWriter.writeNewPlayerDataFile(playerData, gameData);
+        
     }
     
 }
