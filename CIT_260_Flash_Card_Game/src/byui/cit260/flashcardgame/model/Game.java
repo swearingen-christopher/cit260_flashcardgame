@@ -10,6 +10,9 @@ import org.json.simple.JSONObject;
  * Change Log:
  * 2017-06-01 Chris Swearingen
  *  Changed the Game.gameID to a String to work with the UUID ID Generator @see http://www.javapractices.com/topic/TopicAction.do?Id=56
+ * 2017-06-03 Chris Swearingen
+ *  Finished the toJSON TODO's for JSON file writing
+ *
  */
 
 
@@ -89,8 +92,8 @@ public class Game implements Serializable {
         JSONObject obj = new JSONObject();
 
         obj.put("gameID", this.gameID);            
-        obj.put("subject", this.subject);           //TODO: change to subject.toJSON
-        obj.put("player", this.player.toString());  //TODO: change player.toString into player.toJSON
+        obj.put("subject", this.subject.toJSON());   
+        obj.put("player", this.player.toJSON());  
 
         return obj.toJSONString();    
     }
