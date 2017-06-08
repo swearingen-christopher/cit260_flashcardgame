@@ -7,7 +7,7 @@ package byui.cit260.flashcardgame.control;
 
 import byui.cit260.flashcardgame.model.Game;
 import byui.cit260.flashcardgame.model.Player;
-import byui.cit260.flashcardgame.model.PlayerQuestionHistory;
+import byui.cit260.flashcardgame.model.PlayerGame;
 import byui.cit260.flashcardgame.model.Subject;
 import java.util.ArrayList;
 import java.util.List;
@@ -60,7 +60,7 @@ public class GameControl {
         return deleteStatus;    
     }
 
-    public int updateScore(PlayerQuestionHistory playerQuestionHistory) {
+    public int updateScore(PlayerGame playerQuestionHistory) {
         int score = 0;
         //TODO: Calculate the score, and return the value to be updated in the Game object
         return score;

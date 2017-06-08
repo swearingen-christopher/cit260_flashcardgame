@@ -8,7 +8,7 @@ import org.json.simple.JSONObject;
 /**
  * Created by EgbertRG on 5/13/2017.
  */
-public class PlayerQuestionHistory implements Serializable {
+public class PlayerGame implements Serializable {
     private Subject subject;
     private Player player;
     private Question question;//Allows only ONE question
@@ -23,7 +23,7 @@ public class PlayerQuestionHistory implements Serializable {
     }
     
 
-    public PlayerQuestionHistory() {
+    public PlayerGame() {
     }
 
     public Subject getSubject() {
@@ -55,7 +55,7 @@ public class PlayerQuestionHistory implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        PlayerQuestionHistory that = (PlayerQuestionHistory) o;
+        PlayerGame that = (PlayerGame) o;
 
         if (subject != null ? !subject.equals(that.subject) : that.subject != null) return false;
         if (player != null ? !player.equals(that.player) : that.player != null) return false;

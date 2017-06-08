@@ -14,7 +14,7 @@ import byui.cit260.flashcardgame.model.Question;
 import java.util.ArrayList;
 import java.util.List;
 import byui.cit260.flashcardgame.model.Subject;
-import byui.cit260.flashcardgame.model.PlayerQuestionHistory;
+import byui.cit260.flashcardgame.model.PlayerGame;
 
 /**
  *
@@ -76,7 +76,7 @@ public class CIT_260_Flash_Card_Game {
         String subjectInfo = subject1.toString();
         System.out.println(subjectInfo);
 
-        PlayerQuestionHistory playerQuestionHistory1 = new PlayerQuestionHistory();
+        PlayerGame playerQuestionHistory1 = new PlayerGame();
         playerQuestionHistory1.setPlayer(playerOne);
         playerQuestionHistory1.setQuestion(question1);
         playerQuestionHistory1.setSubject(subject1);
