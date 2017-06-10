@@ -5,7 +5,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import org.json.simple.JSONObject;
 
 /**
  * Created by EgbertRG on 5/11/2017.
@@ -16,6 +15,10 @@ public class Subject implements Serializable {
     private String subjectName;
     private String subjectDescription;
     private Integer difficultyLevel;
+    private List<Question> questionsList = new ArrayList<>(); //Allows 0:M questions (each with 0:M answers)
+    
+    public Subject() {
+    }
 
     public Integer getDifficultyLevel() {
         return difficultyLevel;
@@ -31,10 +34,6 @@ public class Subject implements Serializable {
 
     public void setQuestionsList(List<Question> questionsList) {
         this.questionsList = questionsList;
-    }
-    private List<Question> questionsList = new ArrayList<>(); //Allows 0:M questions (each with 0:M answers)
-
-    public Subject() {
     }
 
     public String getSubjectID() {
@@ -96,10 +95,7 @@ public class Subject implements Serializable {
         if (!Objects.equals(this.difficultyLevel, other.difficultyLevel)) {
             return false;
         }
-        if (!Objects.equals(this.questionsList, other.questionsList)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.questionsList, other.questionsList);
     }
 
     @Override
@@ -107,21 +103,6 @@ public class Subject implements Serializable {
         return "Subject{" + "subjectID=" + subjectID + ", subjectName=" + subjectName + ", subjectDescription=" + subjectDescription + ", difficultyLevel=" + difficultyLevel + ", questionsList=" + questionsList + '}';
     }
 
-
- 
-    @Deprecated
-    public String toJSON() {
-        JSONObject obj = new JSONObject();
-
-        obj.put("subjectID", this.subjectID);
-        obj.put("subjectName", this.subjectName);
-        obj.put("subjectDescription", this.subjectDescription);
-        obj.put("questionsList", this.questionsList);
-
-        return obj.toJSONString();
-
-    }
-    
     
     public String toJson(){
         Gson gson = new Gson();

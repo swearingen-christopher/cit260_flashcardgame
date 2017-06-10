@@ -32,23 +32,11 @@ public class FileControl {
         String filePath = "./JsonDataFiles/PlayerData/";
                filePath += playerData.getPlayerID();
                filePath += ".json";
-
-        //Create the JSON handler
-        JSONObject obj = new JSONObject();
-        
-        //add the player's information to the json object
-        obj.put("player", playerData.toJSON());
-
-        //add the player's game to the json array
-        JSONArray gameList = new JSONArray();
-        gameList.add(gameData.toJSON());
-        obj.put("gamehistory", gameList);
-
-        
+               
         //attempt to write the data to a JSON text file
         try (FileWriter file = new FileWriter(filePath)) {
 
-            file.write(obj.toJSONString());
+            file.write(playerData.toJSON());
             file.flush();
             
             status = "Player game saved successfully to ";
@@ -64,7 +52,9 @@ public class FileControl {
     }
     
     public JSONObject getPlayerDataFile(String playerUUID){
-        
+
+        //TODO: change this to parse the file using GSON classes
+    
         //build the filepath from the player's UUID
         String filePath = "./JsonDataFiles/PlayerData/" + playerUUID +".json";
         JSONObject playerJsonData = new JSONObject();        
