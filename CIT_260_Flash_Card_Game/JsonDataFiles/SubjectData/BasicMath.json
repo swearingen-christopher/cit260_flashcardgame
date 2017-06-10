@@ -1,7 +1,8 @@
 {
   "subject": {
     "subjectID": "1",
-    "name": "Basic Math",
+    "name": "Basic Math Level 1",
+    "description":"Basic math level 1 is addition and subtraction",
     "difficulty": "1",
     "questions": {
       "question": [
@@ -22,9 +23,9 @@
                 "4"
               ],
               "isCorrect": [
-                "True",
-                "False",
-                "False"
+                true,
+                false,
+                false
               ]
             }
           }
@@ -48,10 +49,10 @@
                 "0"
               ],
               "isCorrect": [
-                "False",
-                "False",
-                "False",
-                "True"
+                false,
+                false,
+                false,
+                true
               ]
             }
           }

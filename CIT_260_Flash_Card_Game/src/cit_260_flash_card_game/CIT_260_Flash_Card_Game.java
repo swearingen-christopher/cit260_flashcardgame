@@ -64,25 +64,23 @@ public class CIT_260_Flash_Card_Game {
         //Add a single answer for demo-ing
         question1.setQuestionAnswer(answer1);
         
-        //Echo out the Question object's data
-        System.out.println(question1);
+        List<Question> questionsList = new ArrayList<>();
+        
+        questionsList.add(question1);
+        
         
         Subject subject1 = new Subject();
         subject1.setSubjectID(UUIDGenerator.generateID());
-        subject1.setSubjectDescription("An Introduction to Object Oriented Programming");
-        subject1.setSubjectName("JAVA I");
-        subject1.setQuestion(question1);
+        subject1.setSubjectName("Basic Math Level 1");
+        subject1.setSubjectDescription("Basic math level 1 is limited to addition and subtraction");
+        subject1.setDifficultyLevel(1);
+        subject1.setQuestionsList(questionsList);
 
-        String subjectInfo = subject1.toString();
-        System.out.println(subjectInfo);
 
-        PlayerGame playerQuestionHistory1 = new PlayerGame();
-        playerQuestionHistory1.setPlayer(playerOne);
-        playerQuestionHistory1.setQuestion(question1);
-        playerQuestionHistory1.setSubject(subject1);
-
-        String playerQuestionHistoryInfo = playerQuestionHistory1.toString();
-        System.out.println(playerQuestionHistoryInfo);
+        PlayerGame playerGame = new PlayerGame();
+        playerGame.setPlayer(playerOne);
+        playerGame.setQuestion(question1);
+        playerGame.setSubject(subject1);
         
         
         Game gameData = new Game();
@@ -92,6 +90,11 @@ public class CIT_260_Flash_Card_Game {
         gameData.setGameID(UUIDGenerator.generateID());
         
         testFileWriter(playerOne, gameData);
+        
+        
+        //Testing the JSON Encoding
+        System.out.println("TESTING subject1.toJson encoder");
+        System.out.println(subject1.toJson());
     }
     
     
