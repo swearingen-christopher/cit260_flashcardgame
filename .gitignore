@@ -15,7 +15,7 @@ source
 *.dmg
 *.gz
 *.iso
-3*.jar
+#*.jar
 *.rar
 *.tar
 *.zip
