@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import byui.cit260.flashcardgame.model.Subject;
 import byui.cit260.flashcardgame.model.PlayerGame;
+import byui.cit260.flashcardgame.view.StartProgramView;
 
 /**
  *
@@ -25,8 +26,19 @@ public class CIT_260_Flash_Card_Game {
     /**
      * @param args the command line arguments
      */
+    
+    private static Game currentGame = null;
+    private static Player player = null;
+    
+    
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        //Create StartProgramViewOrig and display the start program view//
+        StartProgramView StartProgramView = new StartProgramView();
+        StartProgramView.displayStartProgramView();
+        
+        
         Player playerOne = new Player();
         
         playerOne.setName("Austin Powers");
@@ -92,6 +104,26 @@ public class CIT_260_Flash_Card_Game {
         gameData.setGameID(UUIDGenerator.generateID());
         
         testFileWriter(playerOne, gameData);
+    
+    
+    
+    
+    }
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        CIT_260_Flash_Card_Game.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        CIT_260_Flash_Card_Game.player = player;
     }
     
     

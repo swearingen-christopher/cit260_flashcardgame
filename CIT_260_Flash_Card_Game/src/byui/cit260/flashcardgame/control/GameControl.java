@@ -9,6 +9,7 @@ import byui.cit260.flashcardgame.model.Game;
 import byui.cit260.flashcardgame.model.Player;
 import byui.cit260.flashcardgame.model.PlayerGame;
 import byui.cit260.flashcardgame.model.Subject;
+import cit_260_flash_card_game.CIT_260_Flash_Card_Game;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -18,6 +19,29 @@ import java.util.UUID;
  * @author christopher.swearing
  */
 public class GameControl {
+ 
+// Turned into a stub function to test createPlayer()
+    public static Player createPlayer(String playersName, String name) {
+        
+        if (name == null) {
+           return null;
+    }
+   
+    Player player = new Player();
+    player.setName(name);
+
+    CIT_260_Flash_Card_Game.setPlayer(player);//save the player   
+    return player;
+    
+    }
+
+    public static void createNewGame(Player player) {
+        System.out.println("\n*** createNewGame stub function called ***");
+    }
+
+    
+
+        
     public Game createGame(Player player, Subject subject) {
         Game game = new Game();
         
