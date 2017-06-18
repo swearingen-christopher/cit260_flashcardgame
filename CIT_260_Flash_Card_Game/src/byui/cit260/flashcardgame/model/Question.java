@@ -5,22 +5,25 @@
  */
 package byui.cit260.flashcardgame.model;
 
+import com.google.gson.Gson;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import org.json.simple.JSONObject;
 
 /**
  *
  * @author christopher.swearing
  */
-public class Question implements Serializable{
-    
+public class Question implements Serializable {
+
     private String questionID; //GUID-based ID
     private String questionText; //This is the text of the question itself
+    private Integer questionDifficulty;
     private Answer questionAnswer; //TODO:Eventually this should be an Array of possible answers
     private List<Answer> answersList = new ArrayList<>();
+    public Question() {
+    }
 
     public List<Answer> getAnswersList() {
         return answersList;
@@ -30,13 +33,19 @@ public class Question implements Serializable{
         this.answersList = answersList;
     }
 
-    public Question() {
-    }
 
     public String getQuestionID() {
         return questionID;
     }
 
+    public Integer getQuestionDifficulty() {
+        return questionDifficulty;
+    }
+
+    public void setQuestionDifficulty(Integer questionDifficulty) {
+        this.questionDifficulty = questionDifficulty;
+    }
+    
     public void setQuestionID(String questionID) {
         this.questionID = questionID;
     }
@@ -49,7 +58,6 @@ public class Question implements Serializable{
         this.questionText = questionText;
     }
 
- 
     public Answer getQuestionAnswer() {
         return questionAnswer;
     }
@@ -90,24 +98,18 @@ public class Question implements Serializable{
 
     @Override
     public String toString() {
-        return this.toJSON();  //can we do this?
-        /*
+
         return "Question{" + "questionID=" + questionID 
                  + ", questionText=" + questionText 
                 + ", questionAnswer=" + questionAnswer 
                 + ", answersList=" + answersList + '}';
-        */
+
     }
 
     public String toJSON() {
-        JSONObject obj = new JSONObject();
-
-        obj.put("questionID", this.questionID);
-        obj.put("questionText", this.questionText);
-        obj.put("answers", this.answersList);
-        obj.put("questionAnswer", this.questionAnswer);
+        Gson gson = new Gson();
         
-        return obj.toJSONString();
+        return gson.toJson(this);
 
     }
 

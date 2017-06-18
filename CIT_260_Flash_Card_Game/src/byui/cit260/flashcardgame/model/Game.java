@@ -1,8 +1,8 @@
 package byui.cit260.flashcardgame.model;
 
+import com.google.gson.Gson;
 import java.io.Serializable;
 import java.util.Objects;
-import org.json.simple.JSONObject;
 
 /**
  * Created by EgbertRG on 5/23/2017.
@@ -12,17 +12,20 @@ import org.json.simple.JSONObject;
  *  Changed the Game.gameID to a String to work with the UUID ID Generator @see http://www.javapractices.com/topic/TopicAction.do?Id=56
  * 2017-06-03 Chris Swearingen
  *  Finished the toJSON TODO's for JSON file writing
+ * 
+ * 2017-06-10 Chris
+ *  Updated the toJSON method to use GSON.
  *
  */
 
 
 public class Game implements Serializable {
-    public Game() {
-    }
 
     private String gameID;
     private Subject subject;
     private Player player;
+    public Game() {
+    }
 
     public String getGameID() {
         return gameID;
@@ -89,12 +92,9 @@ public class Game implements Serializable {
     }
 
     public String toJSON(){
-        JSONObject obj = new JSONObject();
-
-        obj.put("gameID", this.gameID);            
-        obj.put("subject", this.subject.toJSON());   
-        obj.put("player", this.player.toJSON());  
-
-        return obj.toJSONString();    
+        Gson gson = new Gson();
+        
+        return gson.toJson(this);
+        
     }
 }

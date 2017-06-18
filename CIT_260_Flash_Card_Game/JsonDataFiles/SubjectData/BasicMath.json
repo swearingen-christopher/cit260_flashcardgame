@@ -1,0 +1,63 @@
+{
+  "subject": {
+    "subjectID": "1",
+    "name": "Basic Math Level 1",
+    "description":"Basic math level 1 is addition and subtraction",
+    "difficulty": "1",
+    "questions": {
+      "question": [
+        {
+          "questionID": "1",
+          "questionDifficulty": "1",
+          "questionText": "What is 1+1?",
+          "answers": {
+            "answer": {
+              "answerID": [
+                "1",
+                "2",
+                "3"
+              ],
+              "answerText": [
+                "2",
+                "3",
+                "4"
+              ],
+              "isCorrect": [
+                true,
+                false,
+                false
+              ]
+            }
+          }
+        },
+        {
+          "questionID": "2",
+          "questionDifficulty": "1",
+          "questionText": "What is 1-1?",
+          "answers": {
+            "answer": {
+              "answerID": [
+                "4",
+                "5",
+                "6",
+                "7"
+              ],
+              "answerText": [
+                "2",
+                "3",
+                "4",
+                "0"
+              ],
+              "isCorrect": [
+                false,
+                false,
+                false,
+                true
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}
