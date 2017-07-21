@@ -106,11 +106,7 @@ public class MainMenuView {
     private void startNewGame() {
         //Creates a new game
         
-        GameControl.createNewGame(CIT_260_Flash_Card_Game.getPlayer());
-        
-        //Display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        System.out.println("\n*** startNewGame function called ***");
     
     }
 
@@ -123,7 +119,7 @@ public class MainMenuView {
     }
 
     private void saveGame() {
-        System.out.println("\n*** startExistingGame function called ***");
+        System.out.println("\n*** saveGame function called ***");
     }
     
     
